@@ -4,11 +4,13 @@ import Intro from "./pages/Intro";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
-import Itinerary from "./pages/ItineraryPage";
-import ItineraryList from "./pages/ItineraryList";
-import NewItinerary from "./pages/NewItinerary";
+import Itinerary from "./pages/TripPage";
+import ItineraryList from "./pages/TripList";
+import NewItinerary from "./pages/NewTrip";
 import NavBar from "./components/Navbar";
 import './styles/font.css'
+import { AuthProvider } from "./context/AuthContext";
+import PrivateRoute from "./utils/PrivateRoute";
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,20 +20,22 @@ import './styles/font.css'
 // import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
-
   return (
     <BrowserRouter className="font">
-      <NavBar isAuth={isAuth} setIsAuth={setIsAuth} />
-      <Routes>
-        <Route path="/" element={<Intro />}/>
-        <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-        <Route path="/signup" element={<Signup setIsAuth={setIsAuth} />} />
-        <Route path="/my-itineraries" element={<ItineraryList />} />
-        <Route path="/my-itinerary/:id" element={<Itinerary />} />
-        <Route path="/new-itinerary" element={<NewItinerary />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <AuthProvider>
+        <NavBar/>
+        <Routes>
+          <Route path="/" element={<Intro />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/signup" element={<Signup />}/>
+
+          <Route path="/trips" element={<ItineraryList />}/>
+          <Route path="/trips/:id" element={<Itinerary />}/>
+          <Route path="/trips/new" element={<NewItinerary />}/>
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   )
 };

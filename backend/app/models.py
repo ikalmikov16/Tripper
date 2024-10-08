@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Itinerary(models.Model):
+class Trip(models.Model):
     title = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
     start_date = models.DateField()
@@ -18,4 +18,4 @@ class Event(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     
-    itinerary = models.ForeignKey(Itinerary, related_name='events', on_delete=models.CASCADE)
+    trip = models.ForeignKey(Trip, related_name='events', on_delete=models.CASCADE)

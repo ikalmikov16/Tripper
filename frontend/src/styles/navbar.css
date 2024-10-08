@@ -1,0 +1,9 @@
+#navbar-brand {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#navbar-link {
+    font-size: large;
+    color: rgb(237, 237, 237);
+}

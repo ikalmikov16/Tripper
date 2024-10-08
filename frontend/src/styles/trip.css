@@ -1,0 +1,48 @@
+#trip-wrapper{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+#trip-list-container{
+    width: 600px
+}
+
+#trip-list-item{
+    margin: 20px;
+    padding:10px;
+    border: 2px solid rgb(255, 38, 38);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#trip-list-item:hover{
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+#trip-title{
+    font-size: 45px;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+#trip-title:hover{
+    background-color: rgb(235, 235, 235);
+    outline: auto;
+    outline-color: rgb(255, 100, 100);
+    cursor: text;
+}
+
+#trip-details{
+    padding-left: 10px;
+}
+
+.font {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}

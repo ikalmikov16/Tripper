@@ -1,0 +1,17 @@
+#event{
+    margin: 20px;
+    padding:10px;
+    border: 2px solid rgb(255, 38, 38);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#event-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#event-form{
+    display: flex;
+    justify-content: space-evenly;
+}
